@@ -1,14 +1,14 @@
 const User = require('../models/User')
-const Campsite = require('../models/Campsite')
+// const Campsite = require('../models/Campsite')
 
-const campsitesController = {
-  index: (req, res) => {
-    let userId = req.params.userId
-    User.findById(userId).populate('campsite')
-      .then((user) => {
-        res.send(user.campsites)
-      })
-  }
+// const campsitesController = {
+//   index: (req, res) => {
+//     let userId = req.params.userId
+//     User.findById(userId).populate('campsite')
+//       .then((user) => {
+//         res.send(user.campsites)
+//       })
+//   }
 //   show: (req, res) => {
 //     let campsiteId = req.params.campsiteId
 //     Campsite.findById(campsiteId)

@@ -6,10 +6,10 @@ const Campsite = new Schema({
     campsiteLocation: String,
     campsiteType: String,
     campsiteOpen: String,
-    description: String,
-    activities: String,
-    linkToBook: String,
-    img: String
+    campsiteDescription: String,
+    campsiteActivities: String,
+    campsiteLinkToBook: String,
+    campsiteImg: String
 })
 
 module.exports = mongoose.model('Campsite', Campsite)
