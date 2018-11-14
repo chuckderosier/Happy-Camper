@@ -1,7 +1,7 @@
 const mongoose = require('../db/connections')
 const Schema = mongoose.Schema
 
-const User = new Schema({
+const Campsite = new Schema({
     campsiteName: String,
     campsiteLocation: String,
     campsiteType: String,
