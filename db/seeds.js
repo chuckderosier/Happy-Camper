@@ -1,6 +1,5 @@
 const User = require('../models/User')
 const Campsite = require('../models/Campsite')
-const User = require('../models/User')
 const mongoose = require('./connections')
 
 const portStJoe = new Campsite({
