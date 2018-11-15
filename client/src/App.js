@@ -10,8 +10,8 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route exact path='/api/LoginForm' component={LoginForm} />
-          <Route exact path='api/UserPage' component={UserPage} />
+          <Route exact path='/login' component={LoginForm} />
+          <Route exact path='/users/:usedId' component={UserPage} />
           <Route path='/' component={HomePage} />
         </Switch>
       </Router>
