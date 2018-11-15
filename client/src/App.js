@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch, Link,Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-router-dom'
 // import styled from 'styled-components'
 import HomePage from './components/HomePage'
 import LoginForm from './components/LoginForm'
@@ -9,12 +9,10 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <Route>
-          <Switch>
-            <HomePage />
-            <LoginForm />
-          </Switch>
-        </Route>
+        <Switch>
+          <Route exact path='/api/LoginForm' component={LoginForm} />
+          <Route path='/' component={HomePage} />
+        </Switch>
       </Router>
     )
   }

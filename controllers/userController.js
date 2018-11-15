@@ -6,13 +6,19 @@ const userController = {
             .then((users) => {
                 res.send(users)
             })
+    },
+    show: (req, res) => {
+        User.findById(req.params.userId).populate('campsites')
+            .then((user) => {
+                res.send(user)
+            })
+    },
+    create: (req, res) => {
+        User.create(req.body)
+            .then((user) => {
+                res.send(user)
+            })
     }
-    // show: (req, res) => {
-    //     User.findById(req.params.userId).populate('campsites')
-    //         .then((user) => {
-    //             res.send(user)
-    //         })
-    // },
     // update: (req, res) => {
     //     User.findByIdAndUpdate(req.params.userId, req.body)
     //         .then((updatedUser) => {
@@ -26,12 +32,7 @@ const userController = {
     //             res.send(200)
     //         })
     // },
-    // create: (req, res) => {
-    //     User.create(req.body)
-    //         .then((user) => {
-    //             res.send(user)
-    //         })
-    // }
+
 }
 
 module.exports = userController
