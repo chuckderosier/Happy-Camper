@@ -18,7 +18,6 @@ class LoginForm extends Component {
         console.log('value', event.target.value)
         const updatedNewUser = {...this.state.newUser}
     
-        // Event Target Name will be either 'username' or 'password'
         updatedNewUser[event.target.name] = event.target.value
         this.setState({newUser: updatedNewUser})
       }

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-ro
 import HomePage from './components/HomePage'
 import LoginForm from './components/LoginForm'
 import UserPage from './components/UserPage'
+import CampsitePage from './components/CampsitePage'
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/login' component={LoginForm} />
           <Route exact path='/users/:userId' component={UserPage} />
+          <Route exact path='/users/:userId/campsites/:campsiteId' component={CampsitePage} />
           <Route path='/' component={HomePage} />
         </Switch>
       </Router>
