@@ -9,26 +9,20 @@ class LoginForm extends Component {
     users: [],
     newUser: {
       username: '',
-      password: ''
+      campType: '',
+      state: ''
     }
   }
 
   handleChange = (event) => {
-    console.log('name', event.target.name)
-    console.log('value', event.target.value)
     const updatedNewUser = { ...this.state.newUser }
-
     updatedNewUser[event.target.name] = event.target.value
     this.setState({ newUser: updatedNewUser })
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
-
-    // Make post to our api to create new user
     axios.post('/api/users', this.state.newUser).then(res => {
-      // when we get that data back, we need to navigate to the new users page
-      console.log(res.data)
       this.props.history.push(`/users/${res.data._id}`)
     })
 
