@@ -11,7 +11,9 @@ class UserPage extends Component {
     }
 
     componentDidMount() {
-        axios.get('/api/campsites').then((res) => {
+        const userId = this.props.match.params.userId
+        axios.get(`/api/users/${userId}/campsites`).then((res) => {
+            console.log(res.data)
             this.setState({ campsites: res.data })
         })
     }

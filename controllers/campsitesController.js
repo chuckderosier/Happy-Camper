@@ -1,10 +1,10 @@
 const User = require('../models/User')
-// const Campsite = require('../models/Campsite')
+const Campsite = require('../models/Campsite')
 
 const campsitesController = {
   index: (req, res) => {
     let userId = req.params.userId
-    User.findById(userId).populate('campsite')
+    User.findById(userId).populate('campsites')
       .then((user) => {
         res.send(user.campsites)
       })
