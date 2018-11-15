@@ -13,7 +13,6 @@ class UserPage extends Component {
     componentDidMount() {
         const userId = this.props.match.params.userId
         axios.get(`/api/users/${userId}/campsites`).then((res) => {
-            console.log(res.data)
             this.setState({
                 user: res.data,
                 campsites: res.data.campsites
@@ -24,7 +23,7 @@ class UserPage extends Component {
     render() {
         return (
             <div>
-                <h3>{this.state.user.username}'s' campsites</h3>
+                <h3>{this.state.user.username}'s campsites</h3>
                 <div>
                     {this.state.campsites.map((campsite, i) => (
                         <div key={i}>
@@ -32,6 +31,7 @@ class UserPage extends Component {
                         </div>
                     ))}
                 </div>
+                <Link to="/newCamp">Add a new campsite</Link>
             </div>
         )
     }

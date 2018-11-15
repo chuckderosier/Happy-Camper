@@ -11,8 +11,8 @@ router.post('/api/users', userController.create)
 
 router.get('/api/users/:userId/campsites', campsitesController.index)
 router.get('/api/users/:userId/campsites/:campsiteId', campsitesController.show)
+router.post('/api/users/:userId/campsites/:campsiteId', campsitesController.create)
 // router.delete('/api/users/:userId/campsites/:campsiteId', campsitesController.delete)
 // router.patch('/api/users/:userId/campsites/:campsiteId', campsitesController.update)
-// router.post('/api/users/:userId/campsites/:campsiteId', campsitesController.create)
 
 module.exports = router
