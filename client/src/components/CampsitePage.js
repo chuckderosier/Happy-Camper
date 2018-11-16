@@ -20,6 +20,14 @@ class CampsitePage extends Component {
         })
     }
 
+    handleDelete = () => {
+        const campsiteId = this.props.match.params.campsiteId
+        const userId = this.props.match.params.userId
+        axios.delete(`/api/users/${userId}/campsites/${campsiteId}`).then(() => {
+            this.props.history.push(`/users/${userId}`)
+        })
+    }
+
     render() {
         return (
             <div>
@@ -35,7 +43,13 @@ class CampsitePage extends Component {
                 </div>
                 <a href={this.state.campsites.campsiteLinkToBook}>Book now</a>
                 <div>
-                    <Link to={`/users/${this.props.match.params.userId}`}>Your Page</Link>
+                    <Link to={`/users/${this.props.match.params.userId}`}>Your Campsites Page</Link>
+                </div>
+                <div>
+                    <Link to={`${this.props.match.params.campsiteId}/updateCampsite`} >Update campsite information</Link>
+                </div>
+                <div>
+                    <button onClick={() => this.handleDelete()}>Remove this campsite</button>
                 </div>
                 <div>
                     <Link to='/'>Return to Home page</Link>

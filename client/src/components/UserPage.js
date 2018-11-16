@@ -22,8 +22,6 @@ class UserPage extends Component {
 
     handleDelete = () => {
         const userId = this.props.match.params.userId
-        console.log("start")
-
         axios.delete(`/api/users/${userId}`).then(() => {
             this.props.history.push('/users')
         })
@@ -45,8 +43,12 @@ class UserPage extends Component {
                 <div>
                     <Link to={`${this.props.match.params.userId}/updateUser`} >Edit your Profile</Link>
                 </div>
-                <Link to={`${this.props.match.params.userId}/newCamp`} >Add a new campsite</Link>
-                <button onClick={() => this.handleDelete()}>This app is garbage get me outta here</button>
+                <div>
+                    <Link to={`${this.props.match.params.userId}/newCampsite`} >Add a new campsite</Link>
+                </div>
+                <div>
+                    <button onClick={() => this.handleDelete()}>This app is garbage get me outta here</button>
+                </div>
                 <Link to="/">Login Page</Link>
             </div>
         )

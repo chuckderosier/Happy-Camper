@@ -16,7 +16,6 @@ class UpdateForm extends Component {
         const updatedChangeUser = { ...this.state.changeUser }
         updatedChangeUser[event.target.name] = event.target.value
         this.setState({ changeUser: updatedChangeUser })
-        // console.log("end h", changeUser)
     }
 
     handleUpdate = (event) => {

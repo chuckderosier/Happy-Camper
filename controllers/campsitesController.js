@@ -40,22 +40,22 @@ const campsitesController = {
             res.send(newCampsite)
           })
       })
-  }
-  //   delete: (req, res) => {
-  //     let campsiteId = req.params.campsiteId
-  //     Campsite.findByIdAndDelete(campsiteId)
-  //       .then(() => {
-  //         res.send(200)
-  //       })
-  //   },
-  //   update: (req, res) => {
-  //     let campsiteId = req.params.campsiteId
-  //     Campsite.findByIdAndUpdate(campsiteId, req.body, { new: true })
-  //       .then((updatedCampsite) => {
-  //         updatedCampsite.save()
-  //         res.send(updatedCampsite)
-  //       })
-  //   }
+  },
+    delete: (req, res) => {
+      let campsiteId = req.params.campsiteId
+      Campsite.findByIdAndDelete(campsiteId)
+        .then(() => {
+          res.send(200)
+        })
+    },
+    update: (req, res) => {
+      let campsiteId = req.params.campsiteId
+      Campsite.findByIdAndUpdate(campsiteId, req.body, { new: true })
+        .then((updatedCampsite) => {
+          updatedCampsite.save()
+          res.send(updatedCampsite)
+        })
+    }
 
 }
 

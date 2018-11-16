@@ -12,7 +12,7 @@ router.delete('/api/users/:userId', userController.delete)
 router.get('/api/users/:userId/campsites', campsitesController.index)
 router.get('/api/users/:userId/campsites/:campsiteId', campsitesController.show)
 router.post('/api/users/:userId/campsites', campsitesController.create)
-// router.delete('/api/users/:userId/campsites/:campsiteId', campsitesController.delete)
-// router.patch('/api/users/:userId/campsites/:campsiteId', campsitesController.update)
+router.patch('/api/users/:userId/campsites/:campsiteId', campsitesController.update)
+router.delete('/api/users/:userId/campsites/:campsiteId', campsitesController.delete)
 
 module.exports = router
