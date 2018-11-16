@@ -19,13 +19,13 @@ const userController = {
                 res.send(user)
             })
     },
-    // update: (req, res) => {
-    //     User.findByIdAndUpdate(req.params.userId, req.body)
-    //         .then((updatedUser) => {
-    //             updatedUser.save()
-    //             res.send(updatedUser)
-    //         })
-    // },
+    update: (req, res) => {
+        User.findByIdAndUpdate(req.params.userId, req.body)
+            .then((updatedUser) => {
+                updatedUser.save()
+                res.send(updatedUser)
+            })
+    },
     delete: (req, res) => {
         User.findByIdAndDelete(req.params.userId)
             .then(() => {

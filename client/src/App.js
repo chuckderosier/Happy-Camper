@@ -6,13 +6,14 @@ import LoginForm from './components/LoginForm'
 import UserPage from './components/UserPage'
 import CampsitePage from './components/CampsitePage'
 import CampsiteForm from './components/CampsiteForm'
+import UpdateUserForm from './components/UpdateUserForm'
 
 class App extends Component {
   render() {
     return (
       <Router>
         <Switch>
-          <Route exact path='/users/:userId/updateUser' component={UpdateForm} />
+          <Route exact path='/users/:userId/updateUser' component={UpdateUserForm} />
           <Route exact path='/users/:userId/newCamp' component={CampsiteForm} />
           <Route exact path='/login' component={LoginForm} />
           <Route exact path='/users/:userId/campsites/:campsiteId' component={CampsitePage} />

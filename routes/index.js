@@ -6,7 +6,7 @@ const campsitesController = require('../controllers/campsitesController')
 router.get('/api/users', userController.index)
 router.get('/api/users/:userId', userController.show)
 router.post('/api/users', userController.create)
-// router.patch('/api/users/:userId', userController.update)
+router.patch('/api/users/:userId', userController.update)
 router.delete('/api/users/:userId', userController.delete)
 
 router.get('/api/users/:userId/campsites', campsitesController.index)
