@@ -20,20 +20,14 @@ class CampsiteForm extends Component {
       }
     
       handleChange = (event) => {
-        console.log('name', event.target.name)
-        console.log('value', event.target.value)
         const updatedNewCampsite = { ...this.state.newCampsite }
-    
         updatedNewCampsite[event.target.name] = event.target.value
         this.setState({ newCampsite: updatedNewCampsite })
       }
     
       handleSubmit = (event) => {
         event.preventDefault()
-    
-        // Make post to our api to create new user
-        axios.post('/api/users', this.state.newCampsite).then(res => {
-          // when we get that data back, we need to navigate to the new users page
+        axios.post('/api/users/:userId/campsites', this.state.newCampsite).then(res => {
           console.log(res.data)
           this.props.history.push(`/users/${res.data._id}`)
         })
@@ -46,35 +40,35 @@ class CampsiteForm extends Component {
                 <form>
                     <div>
                         <label htmlFor="campsiteName">Campsite Name: </label>
-                        <input onChange={this.handleChange} value={this.state.newCampsite.campsiteName} type="text" name="campsiteName" />
+                        {/* <input onChange={this.handleChange} value={this.state.newCampsite.campsiteName} type="text" name="campsiteName" /> */}
                     </div>
                     <div>
-                        <label htmlFor="campsiteLocation">Campsite Location: </label>
-                        <input onChange={this.handleChange} value={this.state.newCampsite.campsiteLocation} type="text" name="campsiteLocation" />
+                        <label htmlFor="campsiteLocation">Campsite location: </label>
+                        {/* <input onChange={this.handleChange} value={this.state.newCampsite.campsiteLocation} type="text" name="campsiteLocation" /> */}
                     </div>
                     <div>
-                        <label htmlFor="campsiteType">Campsite Type: </label>
-                        <input onChange={this.handleChange} value={this.state.newCampsite.campsiteType} type="text" name="campsiteType" />
+                        <label htmlFor="campsiteType">Camping types: </label>
+                        {/* <input onChange={this.handleChange} value={this.state.newCampsite.campsiteType} type="text" name="campsiteType" /> */}
                     </div>
                     <div>
                         <label htmlFor="campsiteOpen">Campsite is open: </label>
-                        <input onChange={this.handleChange} value={this.state.newCampsite.campsiteOpen} type="text" name="campsiteOpen" />
+                        {/* <input onChange={this.handleChange} value={this.state.newCampsite.campsiteOpen} type="text" name="campsiteOpen" /> */}
                     </div>
                     <div>
                         <label htmlFor="campsiteDescription">Campsite description: </label>
-                        <input onChange={this.handleChange} value={this.state.newCampsite.campsiteDescription} type="text" name="campsiteDescription" />
+                        {/* <input onChange={this.handleChange} value={this.state.newCampsite.campsiteDescription} type="text" name="campsiteDescription" /> */}
                     </div>
                     <div>
                         <label htmlFor="campsiteActivities">Campsite activities: </label>
-                        <input onChange={this.handleChange} value={this.state.newCampsite.campsiteActivities} type="text" name="campsiteActivities" />
+                        {/* <input onChange={this.handleChange} value={this.state.newCampsite.campsiteActivities} type="text" name="campsiteActivities" /> */}
                     </div>
                     <div>
                         <label htmlFor="campsiteLinkToBook">Link to book campsite: </label>
-                        <input onChange={this.handleChange} value={this.state.newCampsite.campsiteLinkToBook} type="text" name="campsiteLinkToBook" />
+                        {/* <input onChange={this.handleChange} value={this.state.newCampsite.campsiteLinkToBook} type="text" name="campsiteLinkToBook" /> */}
                     </div>
                     <div>
                         <label htmlFor="campsiteImg">Link to image of campsite: </label>
-                        <input onChange={this.handleChange} value={this.state.newCampsite.campsiteImg} type="text" name="campsiteImg" />
+                        {/* <input onChange={this.handleChange} value={this.state.newCampsite.campsiteImg} type="text" name="campsiteImg" /> */}
                     </div>
                 </form>
             </div>

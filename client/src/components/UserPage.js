@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 // import styled from 'styled-components'
 
 class UserPage extends Component {
@@ -20,6 +20,17 @@ class UserPage extends Component {
         })
     }
 
+    handleDelete = userId => {
+        axios.delete(`/api/users/${userId}`).then(() => {
+            const newUsers = [...this.state.users]
+            const filtered = newUsers.filter(user => {
+                return user._id !== userId 
+            })
+            this.setState({ users: filtered })
+        })
+        .then() // need redirect to users
+    }
+
     render() {
         return (
             <div>
@@ -32,6 +43,7 @@ class UserPage extends Component {
                     ))}
                 </div>
                 <Link to="/newCamp">Add a new campsite</Link>
+                <button onClick={this.handleDelete()}>This app is garbage get me outta here</button>
             </div>
         )
     }
