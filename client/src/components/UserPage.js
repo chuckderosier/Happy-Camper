@@ -44,7 +44,7 @@ class UserPage extends Component {
                         </div>
                     ))}
                 </div>
-                <Link to="/newCamp">Add a new campsite</Link>
+                <Link to={`${this.props.match.params.userId}/newCamp`} >Add a new campsite</Link>
                 <button onClick={() => this.handleDelete()}>This app is garbage get me outta here</button>
                 <Link to="/">Login Page</Link>
             </div>

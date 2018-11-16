@@ -28,7 +28,8 @@ class CampsiteForm extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         axios.post('/api/users/:userId/campsites', this.state.newCampsite).then(res => {
-            this.props.history.push(`/users/${res.data._id}`)
+            this.state.campsites.history.push(`/users/${res.data._id}`)
+            console.log("end submit", res.data)
         })
     }
 
