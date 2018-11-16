@@ -27,7 +27,7 @@ const cloudlandCanyon = new Campsite({
 const chuck = new User({
     username: "Chuck",
     campingStyle: "tent, primitive",
-    state: "Georgia",
+    userState: "Georgia",
     campsites: [portStJoe, cloudlandCanyon]
 })
 

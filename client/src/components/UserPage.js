@@ -23,18 +23,20 @@ class UserPage extends Component {
     handleDelete = userId => {
         axios.delete(`/api/users/${userId}`).then(() => {
             const newUsers = [...this.state.users]
+            console.log('handle', newUsers)
             const filtered = newUsers.filter(user => {
                 return user._id !== userId 
             })
             this.setState({ users: filtered })
         })
-        .then() // need redirect to users
     }
 
     render() {
         return (
             <div>
                 <h3>{this.state.user.username}'s campsites</h3>
+                <h4>Preferred camping style: {this.state.user.campingStyle}</h4>
+                <h4>State you live in : {this.state.user.userState}</h4>
                 <div>
                     {this.state.campsites.map((campsite, i) => (
                         <div key={i}>

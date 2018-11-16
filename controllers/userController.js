@@ -29,7 +29,8 @@ const userController = {
     delete: (req, res) => {
         User.findByIdAndDelete(req.params.userId)
             .then(() => {
-                res.redirect('/users') // redirect to user
+                console.log("deleted controller")
+                res.redirect('/users') // redirect to users
             })
     }
 

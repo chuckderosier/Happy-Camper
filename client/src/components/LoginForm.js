@@ -9,7 +9,7 @@ class LoginForm extends Component {
     newUser: {
       username: '',
       campType: '',
-      state: ''
+      userState: ''
     }
   }
 
@@ -42,7 +42,7 @@ class LoginForm extends Component {
           </div>
           <div>
             <label htmlFor="state">State You Live In: </label>
-            <input onChange={this.handleChange} value={this.state.newUser.state} type="text" name="state" placeholder="ie, Georgia or Denial" />
+            <input onChange={this.handleChange} value={this.state.newUser.userState} type="text" name="userState" placeholder="ie, Georgia or Denial" />
           </div>
           <button type="submit">Create User</button>
         </form>
