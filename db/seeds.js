@@ -31,10 +31,18 @@ const chuck = new User({
     campsites: [portStJoe, cloudlandCanyon]
 })
 
+const bear = new User({
+    username: "Bear Grylls",
+    campingStyle: "tent, primitive",
+    userState: "Everywhere",
+    campsites: []
+})
+
 User.remove({})
     .then(() => Campsite.remove({}))
     .then(() => portStJoe.save())
     .then(() => cloudlandCanyon.save())
     .then(() => chuck.save())
+    .then(() => bear.save())
     .then(() => console.log('Successful Save'))
     .then(() => mongoose.connection.close())

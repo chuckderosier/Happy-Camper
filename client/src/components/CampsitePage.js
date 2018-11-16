@@ -25,7 +25,7 @@ class CampsitePage extends Component {
                 <h1>{this.state.campsites.campsiteName}</h1>
                 <h4>{this.state.campsites.campsiteLocation}</h4>
                 <h3>Camp is open: {this.state.campsites.campsiteOpen}</h3>
-                <img src={this.state.campsites.campsiteImg} />
+                <img src={this.state.campsites.campsiteImg} alt="alt"/>
                 <p>{this.state.campsites.campsiteDescription}</p>
                 <p>Type of camping available: {this.state.campsites.campsiteType}</p>
                 <div>

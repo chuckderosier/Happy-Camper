@@ -8,7 +8,7 @@ class LoginForm extends Component {
     users: [],
     newUser: {
       username: '',
-      campType: '',
+      campingStyle: '',
       userState: ''
     }
   }
@@ -41,7 +41,7 @@ class LoginForm extends Component {
             <input onChange={this.handleChange} value={this.state.newUser.campingStyle} type="text" name="campingStyle" placeholder="Cabin, RV, tent, primitive" />
           </div>
           <div>
-            <label htmlFor="state">State You Live In: </label>
+            <label htmlFor="userState">State You Live In: </label>
             <input onChange={this.handleChange} value={this.state.newUser.userState} type="text" name="userState" placeholder="ie, Georgia or Denial" />
           </div>
           <button type="submit">Create User</button>

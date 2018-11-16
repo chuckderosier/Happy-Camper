@@ -41,9 +41,8 @@ class HomePage extends Component {
                     ))}
                 </div>
                 <div>
-                    <h3>Click on login to create your user</h3>
                     <HomePageStyles>
-                        <Link to="/login" className="loginButton">Login</Link>
+                        <Link to="/login" className="loginButton">Create New User</Link>
                     </HomePageStyles>
                 </div>
             </div>

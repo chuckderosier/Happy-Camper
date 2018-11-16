@@ -13,6 +13,7 @@ class UserPage extends Component {
     componentDidMount() {
         const userId = this.props.match.params.userId
         axios.get(`/api/users/${userId}/campsites`).then((res) => {
+            console.log(res.data)
             this.setState({
                 user: res.data,
                 campsites: res.data.campsites
@@ -20,12 +21,13 @@ class UserPage extends Component {
         })
     }
 
-    handleDelete = userId => {
+    handleDelete = () => {
+        const userId = this.props.match.params.userId
         axios.delete(`/api/users/${userId}`).then(() => {
             const newUsers = [...this.state.users]
             console.log('handle', newUsers)
             const filtered = newUsers.filter(user => {
-                return user._id !== userId 
+                return user._id !== userId
             })
             this.setState({ users: filtered })
         })
@@ -36,7 +38,7 @@ class UserPage extends Component {
             <div>
                 <h3>{this.state.user.username}'s campsites</h3>
                 <h4>Preferred camping style: {this.state.user.campingStyle}</h4>
-                <h4>State you live in : {this.state.user.userState}</h4>
+                {/* <h4>State you live in : {this.state.user.userState}</h4> */}
                 <div>
                     {this.state.campsites.map((campsite, i) => (
                         <div key={i}>
@@ -45,7 +47,7 @@ class UserPage extends Component {
                     ))}
                 </div>
                 <Link to="/newCamp">Add a new campsite</Link>
-                <button onClick={this.handleDelete()}>This app is garbage get me outta here</button>
+                <button onClick={() => this.handleDelete()}>This app is garbage get me outta here</button>
             </div>
         )
     }
