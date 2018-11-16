@@ -12,6 +12,7 @@ class App extends Component {
     return (
       <Router>
         <Switch>
+          <Route exact path='/users/:userId/updateUser' component={UpdateForm} />
           <Route exact path='/users/:userId/newCamp' component={CampsiteForm} />
           <Route exact path='/login' component={LoginForm} />
           <Route exact path='/users/:userId/campsites/:campsiteId' component={CampsitePage} />

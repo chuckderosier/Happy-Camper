@@ -27,16 +27,15 @@ class CampsiteForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('/api/users/:userId/campsites', this.state.newCampsite).then(res => {
-            this.state.campsites.history.push(`/users/${res.data._id}`)
-            console.log("end submit", res.data)
+        axios.post(`/api/users/${this.props.match.params.userId}/campsites`, this.state.newCampsite).then(res => {
+            this.props.history.push(`/users/${this.props.match.params.userId}`)
         })
     }
 
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div>
                         <label htmlFor="campsiteName">Campsite Name: </label>
                         <input onChange={this.handleChange} value={this.state.newCampsite.campsiteName} type="text" name="campsiteName" />
