@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 // import styled from 'styled-components'
 import HomePage from './components/HomePage'
-import LoginForm from './components/LoginForm'
+import UserForm from './components/UserForm'
 import UserPage from './components/UserPage'
 import CampsitePage from './components/CampsitePage'
 import CampsiteForm from './components/CampsiteForm'
@@ -19,7 +19,7 @@ class App extends Component {
           <Route exact path='/users/:userId/campsites/:campsiteId' component={CampsitePage} />
           <Route exact path='/users/:userId/updateUser' component={UpdateUserForm} />
           <Route exact path='/users/:userId' component={UserPage} />
-          <Route exact path='/login' component={LoginForm} />
+          <Route exact path='/login' component={UserForm} />
           <Route path='/' component={HomePage} />
         </Switch>
       </Router>
