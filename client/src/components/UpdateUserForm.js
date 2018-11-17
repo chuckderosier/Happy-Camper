@@ -4,7 +4,7 @@ import axios from 'axios'
 class UpdateForm extends Component {
 
     state = {
-        users: [],
+        user: {},
         changeUser: {
             username: '',
             campingStyle: '',
@@ -25,13 +25,21 @@ class UpdateForm extends Component {
         })
     }
 
+    fetchUser = () => {
+        axios.get(`/api/user/${this.props.match.params.userId}`).then((user) => {
+            this.setState({
+                user: user
+            })
+        })
+    }
+
     render() {
         return (
             <div>
                 <form onSubmit={this.handleUpdate}>
                     <div>
                         <label htmlFor="username">User Name: </label>
-                        <input onChange={this.handleChange} value={this.state.changeUser.username} type="text" name="username" placeholder="ie, Grizzly Adams" />
+                        <input onChange={this.handleChange} value={this.state.changeUser.username} type="text" name="username" placeholder={this.state.user.username} />
                     </div>
                     <div>
                         <label htmlFor="campingStyle">Camping Style: </label>

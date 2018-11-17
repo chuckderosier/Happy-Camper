@@ -24,7 +24,6 @@ class LoginForm extends Component {
     axios.post('/api/users', this.state.newUser).then(res => {
       this.props.history.push(`/users/${res.data._id}`)
     })
-
   }
 
   render() {
