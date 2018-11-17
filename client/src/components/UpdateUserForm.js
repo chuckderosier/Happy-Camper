@@ -18,18 +18,18 @@ class UpdateForm extends Component {
         this.setState({ changeUser: updatedChangeUser })
     }
 
+    fetchUser = () => {
+        axios.get(`/api/user/${this.props.match.params.userId}`).then((res) => {
+            this.setState({
+                user: res.data
+            })
+        })
+    }
+
     handleUpdate = (event) => {
         event.preventDefault()
         axios.patch(`/api/users/${this.props.match.params.userId}`, this.state.changeUser).then(res => {
             this.props.history.push(`/users/${res.data._id}`)
-        })
-    }
-
-    fetchUser = () => {
-        axios.get(`/api/user/${this.props.match.params.userId}`).then((user) => {
-            this.setState({
-                user: user
-            })
         })
     }
 
@@ -39,7 +39,12 @@ class UpdateForm extends Component {
                 <form onSubmit={this.handleUpdate}>
                     <div>
                         <label htmlFor="username">User Name: </label>
-                        <input onChange={this.handleChange} value={this.state.changeUser.username} type="text" name="username" placeholder={this.state.user.username} />
+                        <input
+                        // x={this.fetchUser()}
+                        onChange={this.handleChange}
+                        value={this.state.changeUser.username}
+                        type="text" name="username"
+                        placeholder={this.state.user.username} />
                     </div>
                     <div>
                         <label htmlFor="campingStyle">Camping Style: </label>

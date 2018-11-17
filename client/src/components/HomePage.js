@@ -5,15 +5,9 @@ import styled from 'styled-components'
 
 const HomePageStyles = styled.div`
     margin: 0 auto;
-    background-color: black;
-    width: 10vw;
-    padding: 3px;
     display: flex;
-    justify-content: center;
-    .loginButton {
-        color: white;
-        text-decoration: none;
-    }
+    flex-direction: column;
+    align-items: center;
     `
 
 class HomePage extends Component {
@@ -30,22 +24,19 @@ class HomePage extends Component {
 
     render() {
         return (
-            <div>
+            <HomePageStyles>
+                <h1>Happy Camper App</h1>
+                <p>App to save you favorite campsites and the details about them</p>
                 <div>
-                    <h1>Log-In To See Your Campsites</h1>
-                    <h3>All Users: </h3>
-                    {this.state.users.map((user) => (
-                        <div key={user._id}>
-                            <Link to={`/users/${user._id}`}>{user.username}</Link>
-                        </div>
-                    ))}
+                    <Link to="/login" className="loginButton">Create New User</Link>
                 </div>
-                <div>
-                    <HomePageStyles>
-                        <Link to="/login" className="loginButton">Create New User</Link>
-                    </HomePageStyles>
-                </div>
-            </div>
+                <h2>Click on user name to see their campsites</h2>
+                {this.state.users.map((user) => (
+                    <div key={user._id}>
+                        <Link to={`/users/${user._id}`}>{user.username}</Link>
+                    </div>
+                ))}
+            </HomePageStyles>
         )
     }
 }
