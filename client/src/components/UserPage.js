@@ -49,7 +49,7 @@ class UserPage extends Component {
                 <div>
                     <button onClick={() => this.handleDelete()}>This app is garbage get me outta here</button>
                 </div>
-                <Link to="/">Login Page</Link>
+                <Link to="/">All Users Page</Link>
             </div>
         )
     }
