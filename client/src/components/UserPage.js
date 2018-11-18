@@ -39,12 +39,11 @@ const CampsiteContainer = styled.div`
     padding: 2px auto;
     text-decoration: none;
     color: brown;
-    
+    border-radius: 1em;
     .each-campsite {
         color: brown;
         padding: 2px;
         text-decoration: none;
-        border-radius: 15em;
         text-align: center;
         display: flex;
         flex-direction: row;
