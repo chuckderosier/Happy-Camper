@@ -15,8 +15,7 @@ const UserPageStyles = styled.div`
     .userButtons {
         color: rgb(0,75,0);
         text-align: center;
-        width: 25vw;
-        height: 5vh;
+        padding: .2em .3em;
         background-color: rgb(200,255,200);
         border: brown solid 4px;
         border-radius: 25em;
@@ -24,6 +23,15 @@ const UserPageStyles = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    button {
+        font-family: "Times New Roman", Times, serif;
+        background-color: rgb(255,235,230);
+        color: rgb(200,0,0);
+        border: red solid 4px;
+        border-radius: 25em;
+        font-size: 1em;
+        border-color: red;
     }
     `
 const NavBar = styled.div`
@@ -102,6 +110,7 @@ class UserPage extends Component {
                         to={`${this.props.match.params.userId}/newCampsite`}
                         className="userButtons" >Add New Campsite</Link>
                     <Link to="/" className="userButtons" >All Users Page</Link>
+                    <button onClick={() => this.handleDelete()} >Delete this user</button>
                 </NavBar>
                 <h3>Click on campsite to see details:</h3>
 
@@ -118,8 +127,6 @@ class UserPage extends Component {
                         </Link>
                     </CampsiteContainer>
                 ))}
-
-                <button onClick={() => this.handleDelete()} className="userButtons" >Delete this user</button>
             </UserPageStyles>
         )
     }
