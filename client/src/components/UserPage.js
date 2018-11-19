@@ -4,7 +4,11 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const UserPageStyles = styled.div`
-    background-image: "~/public/images/happyCamperBG1.jpg";
+    background-image: url("images/happyCamperBG2.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
     margin: 0 auto;
     .header {
         display: flex;
@@ -12,6 +16,10 @@ const UserPageStyles = styled.div`
         align-items: center;
         justify-content: space-between;
     }
+    `
+const NavBar = styled.div`
+    display: flex;
+    justify-content: space-evenly;
     .userButtons {
         color: rgb(0,75,0);
         text-align: center;
@@ -33,29 +41,25 @@ const UserPageStyles = styled.div`
         font-size: 1em;
         border-color: red;
     }
-    `
-const NavBar = styled.div`
-    display: flex;
-    justify-content: space-evenly;
 `
 
 const CampsiteContainer = styled.div`
-    width: 20vw;
-    background-color: rgb(255,235,210);
-    border: rgb(0,75,0) solid 10px;
-    margin: 10px;
-    padding: 2px auto;
-    text-decoration: none;
-    color: brown;
-    border-radius: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     .each-campsite {
+        width: 20vw;
+        background-color: rgb(255,235,210);
+        border: rgb(0,75,0) solid 10px;
+        margin: 10px;
+        padding: 2px auto;
+        text-decoration: none;
+        color: brown;
+        border-radius: 1em;
         color: brown;
         padding: 2px;
         text-decoration: none;
         text-align: center;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
     }
@@ -113,20 +117,21 @@ class UserPage extends Component {
                     <button onClick={() => this.handleDelete()} >Delete this user</button>
                 </NavBar>
                 <h3>Click on campsite to see details:</h3>
-
-                {this.state.campsites.map((campsite, i) => (
-                    <CampsiteContainer key={i}>
+                <CampsiteContainer>
+                    {this.state.campsites.map((campsite, i) => (
                         <Link
                             to={`/users/${this.state.user._id}/campsites/${campsite._id}`}
-                            className="each-campsite" >
+                            className="each-campsite"
+                            key={i} >
                             <img src={campsite.campsiteImg} alt="no pic" />
                             <h4>{campsite.campsiteName}</h4>
                             <p>{campsite.campsiteType}</p>
                             <p>{campsite.campsiteLocation}</p>
                             <p>{campsite.campsiteOpen}</p>
                         </Link>
-                    </CampsiteContainer>
-                ))}
+
+                    ))}
+                </CampsiteContainer>
             </UserPageStyles>
         )
     }

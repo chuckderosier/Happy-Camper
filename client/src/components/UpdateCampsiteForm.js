@@ -22,7 +22,7 @@ class UpdateCampsiteForm extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         axios.patch(`/api/users/${this.props.match.params.userId}/campsites/${this.props.match.params.campsiteId}`, this.state.campsite).then(res => {
-        this.props.history.push(`/users/${this.props.match.params.userId}/campsites/${this.props.match.params.campsiteId}`)
+            this.props.history.push(`/users/${this.props.match.params.userId}/campsites/${this.props.match.params.campsiteId}`)
         })
     }
 
