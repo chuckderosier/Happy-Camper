@@ -19,7 +19,7 @@ class UpdateCampsiteForm extends Component {
         this.setState({ campsite: updatedChangeCampsite })
     }
 
-    handleSubmit = (event) => {
+    handleUpdate = (event) => {
         event.preventDefault()
         axios.patch(`/api/users/${this.props.match.params.userId}/campsites/${this.props.match.params.campsiteId}`, this.state.campsite).then(res => {
             this.props.history.push(`/users/${this.props.match.params.userId}/campsites/${this.props.match.params.campsiteId}`)
@@ -29,7 +29,7 @@ class UpdateCampsiteForm extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleUpdate}>
                     <div>
                         <label htmlFor="campsiteName">Campsite Name: </label>
                         <input

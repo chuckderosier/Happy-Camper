@@ -33,6 +33,21 @@ const NavBar = styled.div`
     }
 `
 
+const DisplayCampsite = styled.div`
+    background-color: green;
+    margin: 5px auto;
+    img {
+        float: left;
+        width: 48vw;
+        /* width: 48%; */
+    }
+    .campsite-info {
+        float: right;
+        width: 48vw;
+        /* width: 48%; */
+    }
+`
+
 class CampsitePage extends Component {
 
     state = {
@@ -73,14 +88,18 @@ class CampsitePage extends Component {
                     <Link to='/' className="userLinks" >Return to Home page</Link>
                     <button onClick={() => this.handleDelete()}>Delete This Campsite</button>
                 </NavBar>
-                <h4>{this.state.campsites.campsiteLocation}</h4>
-                <h3>Camp is open: {this.state.campsites.campsiteOpen}</h3>
-                <img src={this.state.campsites.campsiteImg} alt="alt" />
-                <p>{this.state.campsites.campsiteDescription}</p>
-                <p>Type of camping available: {this.state.campsites.campsiteType}</p>
-                <h5>Activities at {this.state.campsites.campsiteName}:</h5>
-                <p>{this.state.campsites.campsiteActivities}</p>
-                <a href={this.state.campsites.campsiteLinkToBook}>Book now</a>
+                <DisplayCampsite>
+                    <img src={this.state.campsites.campsiteImg} alt="alt" />
+                    <div className="campsite-info">
+                        <h4>{this.state.campsites.campsiteLocation}</h4>
+                        <h3>Camp is open: {this.state.campsites.campsiteOpen}</h3>
+                        <p>{this.state.campsites.campsiteDescription}</p>
+                        <p>Type of camping available: {this.state.campsites.campsiteType}</p>
+                        <h5>Activities at {this.state.campsites.campsiteName}:</h5>
+                        <p>{this.state.campsites.campsiteActivities}</p>
+                        <a href={this.state.campsites.campsiteLinkToBook}>Book now</a>
+                    </div>
+                </DisplayCampsite>
             </CampsitePageStyles>
         )
     }

@@ -110,41 +110,41 @@ class UserPage extends Component {
     render() {
         return (
             <div>
-            <UserPageStyles>
-                <div className="header">
-                    <h2>{this.state.user.username}'s campsites</h2>
-                    <div className="sub-header">
-                        <h4>Preferred camping style: {this.state.user.campingStyle}</h4>
-                        <h4>State you live in : {this.state.user.userState}</h4>
+                <UserPageStyles>
+                    <div className="header">
+                        <h2>{this.state.user.username}'s campsites</h2>
+                        <div className="sub-header">
+                            <h4>Preferred camping style: {this.state.user.campingStyle}</h4>
+                            <h4>State you live in : {this.state.user.userState}</h4>
+                        </div>
+                        <NavBar>
+                            <Link
+                                to={`${this.props.match.params.userId}/updateUser`}
+                                className="userLinks" >Edit Your Profile</Link>
+                            <Link
+                                to={`${this.props.match.params.userId}/newCampsite`}
+                                className="userLinks" >Add New Campsite</Link>
+                            <Link to="/" className="userLinks" >All Users Page</Link>
+                            <button onClick={() => this.handleDelete()} >Delete this user</button>
+                        </NavBar>
+                        <h3>Click on campsite to see details:</h3>
                     </div>
-                    <NavBar>
-                        <Link
-                            to={`${this.props.match.params.userId}/updateUser`}
-                            className="userLinks" >Edit Your Profile</Link>
-                        <Link
-                            to={`${this.props.match.params.userId}/newCampsite`}
-                            className="userLinks" >Add New Campsite</Link>
-                        <Link to="/" className="userLinks" >All Users Page</Link>
-                        <button onClick={() => this.handleDelete()} >Delete this user</button>
-                    </NavBar>
-                    <h3>Click on campsite to see details:</h3>
-                </div>
-                <CampsiteContainer>
-                    {this.state.campsites.map((campsite, i) => (
-                        <Link
-                            to={`/users/${this.state.user._id}/campsites/${campsite._id}`}
-                            className="each-campsite"
-                            key={i} >
-                            <img src={campsite.campsiteImg} alt="no pic" />
-                            <h4>{campsite.campsiteName}</h4>
-                            <p>{campsite.campsiteType}</p>
-                            <p>{campsite.campsiteLocation}</p>
-                            <p>{campsite.campsiteOpen}</p>
-                        </Link>
+                    <CampsiteContainer>
+                        {this.state.campsites.map((campsite, i) => (
+                            <Link
+                                to={`/users/${this.state.user._id}/campsites/${campsite._id}`}
+                                className="each-campsite"
+                                key={i} >
+                                <img src={campsite.campsiteImg} alt="no pic" />
+                                <h4>{campsite.campsiteName}</h4>
+                                <p>{campsite.campsiteType}</p>
+                                <p>{campsite.campsiteLocation}</p>
+                                <p>{campsite.campsiteOpen}</p>
+                            </Link>
 
-                    ))}
-                </CampsiteContainer>
-            </UserPageStyles>
+                        ))}
+                    </CampsiteContainer>
+                </UserPageStyles>
             </div>
         )
     }

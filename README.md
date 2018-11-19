@@ -13,7 +13,7 @@ ERD: https://i.imgur.com/i8fHV38.png
 
 Wireframe: https://i.imgur.com/g3yhDdc.jpg
 
-Wireframe: [a relative link](Happy-Camper-Wireframe.pdf)
+Wireframe: [Happy-Camper-Wireframe.pdf](client/images/Happy-Camper-Wireframe.pdf)
 
 Technologies used: HTML, CSS, Express, MongoDB, Mongoose, React, Axios
 
