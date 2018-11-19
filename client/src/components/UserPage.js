@@ -4,17 +4,22 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const UserPageStyles = styled.div`
-    background-image: url("images/happyCamperBG2.jpg");
-    background-size: contain;
+    background-image: url("/images/happyCamperBG2.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
     margin: 0 auto;
+    h2, h4 {
+        background-color: rgba(255,255,255,.5);
+        border-radius: 25em;
+        padding: 3px;
+        margin: .1em auto;
+    }
     .header {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-between;
     }
     `
 const NavBar = styled.div`
@@ -83,7 +88,7 @@ class UserPage extends Component {
 
     componentDidMount() {
         const userId = this.props.match.params.userId
-        axios.get(`/api/users/${userId}/campsites`).then((res) => {
+        axios.get(`/api/users/${userId}`).then((res) => {
             this.setState({
                 user: res.data,
                 campsites: res.data.campsites
@@ -100,23 +105,26 @@ class UserPage extends Component {
 
     render() {
         return (
+            <div>
             <UserPageStyles>
-                <h2>{this.state.user.username}'s campsites</h2>
                 <div className="header">
-                    <h4>Preferred camping style: {this.state.user.campingStyle}</h4>
-                    <h4>State you live in : {this.state.user.userState}</h4>
+                    <h2>{this.state.user.username}'s campsites</h2>
+                    <div className="header">
+                        <h4>Preferred camping style: {this.state.user.campingStyle}</h4>
+                        <h4>State you live in : {this.state.user.userState}</h4>
+                    </div>
+                    <NavBar>
+                        <Link
+                            to={`${this.props.match.params.userId}/updateUser`}
+                            className="userButtons" >Edit Your Profile</Link>
+                        <Link
+                            to={`${this.props.match.params.userId}/newCampsite`}
+                            className="userButtons" >Add New Campsite</Link>
+                        <Link to="/" className="userButtons" >All Users Page</Link>
+                        <button onClick={() => this.handleDelete()} >Delete this user</button>
+                    </NavBar>
+                    <h3>Click on campsite to see details:</h3>
                 </div>
-                <NavBar>
-                    <Link
-                        to={`${this.props.match.params.userId}/updateUser`}
-                        className="userButtons" >Edit Your Profile</Link>
-                    <Link
-                        to={`${this.props.match.params.userId}/newCampsite`}
-                        className="userButtons" >Add New Campsite</Link>
-                    <Link to="/" className="userButtons" >All Users Page</Link>
-                    <button onClick={() => this.handleDelete()} >Delete this user</button>
-                </NavBar>
-                <h3>Click on campsite to see details:</h3>
                 <CampsiteContainer>
                     {this.state.campsites.map((campsite, i) => (
                         <Link
@@ -133,6 +141,7 @@ class UserPage extends Component {
                     ))}
                 </CampsiteContainer>
             </UserPageStyles>
+            </div>
         )
     }
 }

@@ -15,7 +15,7 @@ const portStJoe = new Campsite({
 
 const cloudlandCanyon = new Campsite({
     campsiteName: "Cloudland Canyon",
-    campsiteLocation: "Northwest Georgia and about 25 miles from Chattanooga.",
+    campsiteLocation: "Northwest Georgia",
     campsiteType: "Cabin, RV, tent, primitive",
     campsiteOpen: "Year round.",
     campsiteDescription: "Located on the western edge of Lookout Mountain, this is one of the most scenic parks in the state, offering rugged geology and exceptional hiking. The park straddles a deep gorge cut into the mountain by Sitton Gulch Creek, and elevation differs from 800 to 1,980 feet.",

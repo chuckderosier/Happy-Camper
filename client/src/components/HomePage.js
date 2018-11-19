@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 const HomePageStyles = styled.div`
     background-image: url("images/happyCamperBG1.jpg");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
