@@ -11,6 +11,8 @@ Link to Trello: https://trello.com/b/91X1oKxb/happy-camper
 
 ERD: https://i.imgur.com/i8fHV38.png
 
+Wireframe: https://i.imgur.com/g3yhDdc.jpg
+
 Technologies used: HTML, CSS, Express, MongoDB, Mongoose, React, Axios
 
 Version 2.0:
