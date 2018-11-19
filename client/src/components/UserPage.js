@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const UserPageStyles = styled.div`
-    background-image: "../public/happyCamperBG1.jpg";
+    background-image: "~/public/images/happyCamperBG1.jpg";
     margin: 0 auto;
     .header {
         display: flex;
@@ -119,7 +119,7 @@ class UserPage extends Component {
                         <Link
                             to={`/users/${this.state.user._id}/campsites/${campsite._id}`}
                             className="each-campsite" >
-                            <img src={campsite.campsiteImg} />
+                            <img src={campsite.campsiteImg} alt="no pic" />
                             <h4>{campsite.campsiteName}</h4>
                             <p>{campsite.campsiteType}</p>
                             <p>{campsite.campsiteLocation}</p>

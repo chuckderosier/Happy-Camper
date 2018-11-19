@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const HomePageStyles = styled.div`
-    background-image: "../public/happyCamperBG1.jpg";
+    background-image: "../../public/images/happyCamperBG1.jpg";
     margin: 0 auto;
     .header {
         display: flex;
@@ -24,6 +24,11 @@ const HomePageStyles = styled.div`
         justify-content: center;
         align-items: center;
     }
+    `
+const UserContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     .user-link {
         width: 20vw;
         height: 5vh;
@@ -34,12 +39,11 @@ const HomePageStyles = styled.div`
         text-decoration: none;
         color: brown;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
     }
     `
+    
 
 class HomePage extends Component {
 
@@ -62,9 +66,11 @@ class HomePage extends Component {
                     <Link to="/login" className="newUserButton">Create New User</Link>
                     <h3>Click on user name to see their campsites</h3>
                 </div>
-                {this.state.users.map((user) => (
-                    <Link to={`/users/${user._id}`} className="user-link" key={user._id}>{user.username}</Link>
-                ))}
+                <UserContainer>
+                    {this.state.users.map((user) => (
+                        <Link to={`/users/${user._id}`} className="user-link" key={user._id}>{user.username}</Link>
+                    ))}
+                </UserContainer>
             </HomePageStyles>
         )
     }
