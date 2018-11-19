@@ -34,11 +34,9 @@ class CampsitePage extends Component {
                 <h1>{this.state.campsites.campsiteName}</h1>
                 <div>
                     <Link to={`${this.props.match.params.campsiteId}/updateCampsite`} >Update Campsite Info</Link>
-                    <button onClick={() => this.handleDelete()}>Delete This Campsite</button>
-                </div>
-                <div>
                     <Link to={`/users/${this.props.match.params.userId}`}>Your Campsites Page</Link>
                     <Link to='/'>Return to Home page</Link>
+                    <button onClick={() => this.handleDelete()}>Delete This Campsite</button>
                 </div>
                 <h4>{this.state.campsites.campsiteLocation}</h4>
                 <h3>Camp is open: {this.state.campsites.campsiteOpen}</h3>

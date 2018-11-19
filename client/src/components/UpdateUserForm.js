@@ -4,12 +4,7 @@ import axios from 'axios'
 class UpdateForm extends Component {
 
     state = {
-        user: {},
-        changeUser: {
-            username: '',
-            campingStyle: '',
-            userState: ''
-        }
+        user: {}
     }
 
     componentDidMount() {
@@ -19,28 +14,16 @@ class UpdateForm extends Component {
     }
 
     handleChange = (event) => {
-        const updatedChangeUser = { ...this.state.changeUser }
+        const updatedChangeUser = { ...this.state.user }
         updatedChangeUser[event.target.name] = event.target.value
-        this.setState({ changeUser: updatedChangeUser })
+        this.setState({ user: updatedChangeUser })
     }
-
-    // fetchUser = () => {
-    //     axios.get(`/api/user/${this.props.match.params.userId}`).then((res) => {
-    //         this.setState({
-    //             user: res.data
-    //         })
-    //     })
-    // }
 
     handleUpdate = (event) => {
         event.preventDefault()
-        axios.patch(`/api/users/${this.props.match.params.userId}`, this.state.changeUser).then(res => {
+        axios.patch(`/api/users/${this.props.match.params.userId}`, this.state.user).then(res => {
             this.props.history.push(`/users/${res.data._id}`)
         })
-    }
-
-    isUpdate = () => {
-
     }
 
     render() {
@@ -50,27 +33,23 @@ class UpdateForm extends Component {
                     <div>
                         <label htmlFor="username">User Name: </label>
                         <input
-                        // x={this.fetchUser()}
                         onChange={this.handleChange}
-                        value={this.state.changeUser.username}
-                        type="text" name="username"
-                        placeholder={this.state.user.username} />
+                        value={this.state.user.username}
+                        type="text" name="username" />
                     </div>
                     <div>
                         <label htmlFor="campingStyle">Camping Style: </label>
                         <input
                         onChange={this.handleChange}
-                        value={this.state.changeUser.campingStyle}
-                        type="text" name="campingStyle"
-                        placeholder={this.state.user.campingStyle} />
+                        value={this.state.user.campingStyle}
+                        type="text" name="campingStyle" />
                     </div>
                     <div>
                         <label htmlFor="userState">State You Live In: </label>
                         <input
                         onChange={this.handleChange}
-                        value={this.state.changeUser.userState}
-                        type="text" name="userState"
-                        placeholder={this.state.user.userState} />
+                        value={this.state.user.userState}
+                        type="text" name="userState" />
                     </div>
                     <button type="submit">Save changes</button>
                 </form>
