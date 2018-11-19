@@ -10,7 +10,7 @@ const UserPageStyles = styled.div`
     width: 100vw;
     height: 100vh;
     margin: 0 auto;
-    h2, h4 {
+    h2, h3, h4 {
         background-color: rgba(255,255,255,.5);
         border-radius: 25em;
         padding: 3px;
@@ -19,13 +19,17 @@ const UserPageStyles = styled.div`
     .header {
         display: flex;
         flex-direction: column;
-        align-items: center;
+    }
+    .sub-header {
+        display: flex;
+        flex-direction: row;
+        align-items: space-evenly;
     }
     `
 const NavBar = styled.div`
     display: flex;
     justify-content: space-evenly;
-    .userButtons {
+    .userLinks {
         color: rgb(0,75,0);
         text-align: center;
         padding: .2em .3em;
@@ -109,18 +113,18 @@ class UserPage extends Component {
             <UserPageStyles>
                 <div className="header">
                     <h2>{this.state.user.username}'s campsites</h2>
-                    <div className="header">
+                    <div className="sub-header">
                         <h4>Preferred camping style: {this.state.user.campingStyle}</h4>
                         <h4>State you live in : {this.state.user.userState}</h4>
                     </div>
                     <NavBar>
                         <Link
                             to={`${this.props.match.params.userId}/updateUser`}
-                            className="userButtons" >Edit Your Profile</Link>
+                            className="userLinks" >Edit Your Profile</Link>
                         <Link
                             to={`${this.props.match.params.userId}/newCampsite`}
-                            className="userButtons" >Add New Campsite</Link>
-                        <Link to="/" className="userButtons" >All Users Page</Link>
+                            className="userLinks" >Add New Campsite</Link>
+                        <Link to="/" className="userLinks" >All Users Page</Link>
                         <button onClick={() => this.handleDelete()} >Delete this user</button>
                     </NavBar>
                     <h3>Click on campsite to see details:</h3>
