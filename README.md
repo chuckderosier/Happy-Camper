@@ -5,7 +5,7 @@ The user can change information about a website or even delete it.
 
 Link to Github Repository: https://github.com/chuckderosier/Happy-Camper.git
 
-Link to App deployed on Heroku:
+Link to App deployed on Heroku: https://happy-camper-by-chuck.herokuapp.com/
 
 Link to Trello: https://trello.com/b/91X1oKxb/happy-camper
 

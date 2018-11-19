@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const HomePageStyles = styled.div`
-    background-image: "../../public/images/happyCamperBG1.jpg";
+    background: url("images/happyCamperBG1.jpg");
     margin: 0 auto;
     .header {
         display: flex;
