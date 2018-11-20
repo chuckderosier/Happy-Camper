@@ -36,15 +36,28 @@ const NavBar = styled.div`
 const DisplayCampsite = styled.div`
     background-color: green;
     margin: 5px auto;
+    h3, p {
+        margin: 5px auto;
+    }
     img {
         float: left;
         width: 48vw;
-        /* width: 48%; */
     }
     .campsite-info {
         float: right;
         width: 48vw;
-        /* width: 48%; */
+    }
+    .bookButton {
+        margin: 10px auto;
+    }
+    a{
+        color: rgb(0,75,0);
+        text-align: center;
+        padding: .1em .3em;
+        background-color: rgb(200,255,200);
+        border: brown solid 4px;
+        border-radius: 25em;
+        text-decoration: none;
     }
 `
 
@@ -91,13 +104,15 @@ class CampsitePage extends Component {
                 <DisplayCampsite>
                     <img src={this.state.campsites.campsiteImg} alt="alt" />
                     <div className="campsite-info">
-                        <h4>{this.state.campsites.campsiteLocation}</h4>
+                        <h3>Campsite Location: {this.state.campsites.campsiteLocation}</h3>
                         <h3>Camp is open: {this.state.campsites.campsiteOpen}</h3>
                         <p>{this.state.campsites.campsiteDescription}</p>
                         <p>Type of camping available: {this.state.campsites.campsiteType}</p>
-                        <h5>Activities at {this.state.campsites.campsiteName}:</h5>
+                        <h3>Activities at {this.state.campsites.campsiteName}:</h3>
                         <p>{this.state.campsites.campsiteActivities}</p>
-                        <a href={this.state.campsites.campsiteLinkToBook}>Book now</a>
+                        <div className="bookButton">
+                            <a href={this.state.campsites.campsiteLinkToBook}>Book now</a>
+                        </div>
                     </div>
                 </DisplayCampsite>
             </CampsitePageStyles>
