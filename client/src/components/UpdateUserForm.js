@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-// import { StyledForm } from './FormStyle'
-
-// const FormContainer = styled.StyledForm`
-// `
+import { Link } from 'react-router-dom'
 
 const FormContainer = styled.div`
     background-image: url("/images/happyCamperBG3.jpg");
@@ -17,16 +14,16 @@ const FormContainer = styled.div`
     align-items: center;
     form {
         margin: .3em auto;
+        padding: 5px;
         width: 40vw;
         height: 30vh;
         background-color: rgba(255,255,255,.5);
         display: flex;
         flex-direction: column;
-        align-items: center;
+        column-gap: 5em;
     }
     div {
-        display: flex;
-        align-self: space-between;
+        margin: 0 auto;
     }
 `
 
@@ -62,28 +59,32 @@ class UpdateForm extends Component {
                     <div>
                         <label htmlFor="username">User Name: </label>
                         <input
-                        onChange={this.handleChange}
-                        value={this.state.user.username}
-                        type="text" name="username"
-                        maxlength="20" />
+                            onChange={this.handleChange}
+                            value={this.state.user.username}
+                            type="text" name="username"
+                            maxlength="20" />
                     </div>
                     <div>
                         <label htmlFor="campingStyle">Camping Style: </label>
                         <input
-                        onChange={this.handleChange}
-                        value={this.state.user.campingStyle}
-                        type="text" name="campingStyle"
-                        maxlength="20" />
+                            onChange={this.handleChange}
+                            value={this.state.user.campingStyle}
+                            type="text" name="campingStyle"
+                            maxlength="20" />
                     </div>
                     <div>
                         <label htmlFor="userState">State You Live In: </label>
                         <input
-                        onChange={this.handleChange}
-                        value={this.state.user.userState}
-                        type="text" name="userState"
-                        maxlength="20" />
+                            onChange={this.handleChange}
+                            value={this.state.user.userState}
+                            type="text" name="userState"
+                            maxlength="20" />
                     </div>
                     <button type="submit">Save changes</button>
+                    <div>
+                        {/* <Link to="">Your Campsites</Link> */}
+                        <Link to="/">All Users</Link>
+                    </div>
                 </form>
             </FormContainer>
         )
