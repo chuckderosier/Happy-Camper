@@ -31,6 +31,15 @@ const NavBar = styled.div`
         font-size: 1em;
         border-color: red;
     }
+    button:hover {
+        animation: blinker .5s linear infinite;
+        @keyframes blinker {
+            50% {
+                color: white;
+                background-color: rgb(175,0,0)
+            } 
+        }
+    }
 `
 
 const DisplayCampsite = styled.div`

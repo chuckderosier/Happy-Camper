@@ -51,6 +51,15 @@ const NavBar = styled.div`
         border: red solid 4px;
         border-radius: 25em;
     }
+    button:hover {
+        animation: blinker .5s linear infinite;
+        @keyframes blinker {
+            50% {
+                color: white;
+                background-color: rgb(175,0,0)
+            } 
+        }
+    }
 `
 
 const CampsiteContainer = styled.div`
