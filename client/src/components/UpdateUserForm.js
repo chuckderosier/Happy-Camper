@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
 
 const FormContainer = styled.div`
     background-image: url("/images/happyCamperBG3.jpg");
@@ -14,16 +14,36 @@ const FormContainer = styled.div`
     align-items: center;
     form {
         margin: .3em auto;
-        padding: 5px;
+        padding: 10px;
         width: 40vw;
         height: 30vh;
         background-color: rgba(255,255,255,.5);
         display: flex;
         flex-direction: column;
-        column-gap: 5em;
+        justify-content: space-between;
     }
     div {
         margin: 0 auto;
+    }
+    button {
+        margin: 0 auto;
+        font-family: "Times New Roman", Times, serif;
+        color: rgb(0,75,0);
+        font-size: 1em;
+        background-color: rgb(200,255,200);
+        border: brown solid 4px;
+        border-radius: 25em;     
+    }
+    .userLinks {
+        margin: 0 auto;
+        padding: 2px;
+        font-family: "Times New Roman", Times, serif;
+        color: brown;
+        font-size: 1em;
+        text-decoration: none;
+        background-color: rgb(255,235,210);
+        border: rgb(0,75,0) solid 4px;
+        border-radius: 25em; 
     }
 `
 
@@ -62,7 +82,7 @@ class UpdateForm extends Component {
                             onChange={this.handleChange}
                             value={this.state.user.username}
                             type="text" name="username"
-                            maxlength="20" />
+                            maxLength="20" />
                     </div>
                     <div>
                         <label htmlFor="campingStyle">Camping Style: </label>
@@ -70,7 +90,7 @@ class UpdateForm extends Component {
                             onChange={this.handleChange}
                             value={this.state.user.campingStyle}
                             type="text" name="campingStyle"
-                            maxlength="20" />
+                            maxLength="20" />
                     </div>
                     <div>
                         <label htmlFor="userState">State You Live In: </label>
@@ -78,12 +98,13 @@ class UpdateForm extends Component {
                             onChange={this.handleChange}
                             value={this.state.user.userState}
                             type="text" name="userState"
-                            maxlength="20" />
+                            maxLength="20" />
                     </div>
                     <button type="submit">Save changes</button>
                     <div>
-                        {/* <Link to="">Your Campsites</Link> */}
-                        <Link to="/">All Users</Link>
+                        <Link
+                            to={`/users/${this.props.match.params.userId}`}
+                            className="userLinks" >Your Campsites Page</Link>
                     </div>
                 </form>
             </FormContainer>

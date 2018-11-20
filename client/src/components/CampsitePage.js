@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const CampsitePageStyles = styled.div`
-
+    margin: 0 auto;
 `
 
 const NavBar = styled.div`

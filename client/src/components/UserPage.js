@@ -10,8 +10,9 @@ const UserPageStyles = styled.div`
     width: 100vw;
     height: 100vh;
     margin: 0 auto;
+    padding: 10px;
     h2, h3, h4 {
-        background-color: rgba(255,255,255,.5);
+        background-color: rgba(255,255,255,.6);
         border-radius: 25em;
         padding: 3px;
         margin: .1em auto;
@@ -27,12 +28,13 @@ const UserPageStyles = styled.div`
     }
     `
 const NavBar = styled.div`
+    padding: 5px;
     display: flex;
     justify-content: space-evenly;
     .userLinks {
+        padding: .2em .3em;
         color: rgb(0,75,0);
         text-align: center;
-        padding: .2em .3em;
         background-color: rgb(200,255,200);
         border: brown solid 4px;
         border-radius: 25em;
@@ -45,10 +47,9 @@ const NavBar = styled.div`
         font-family: "Times New Roman", Times, serif;
         background-color: rgb(255,235,230);
         color: rgb(200,0,0);
+        font-size: 1em;
         border: red solid 4px;
         border-radius: 25em;
-        font-size: 1em;
-        border-color: red;
     }
 `
 
@@ -141,7 +142,6 @@ class UserPage extends Component {
                                 <p>{campsite.campsiteLocation}</p>
                                 <p>{campsite.campsiteOpen}</p>
                             </Link>
-
                         ))}
                     </CampsiteContainer>
                 </UserPageStyles>
