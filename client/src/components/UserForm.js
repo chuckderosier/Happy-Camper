@@ -81,8 +81,9 @@ class LoginForm extends Component {
               onChange={this.handleChange}
               value={this.state.newUser.username}
               type="text" name="username"
-              placeholder="Your user name"
-              maxLength="20" />
+              placeholder="Required"
+              maxLength="20"
+              required />
           </div>
           <div>
             <label htmlFor="campingStyle">Camping Style: </label>
@@ -90,7 +91,8 @@ class LoginForm extends Component {
               onChange={this.handleChange}
               value={this.state.newUser.campingStyle}
               type="text" name="campingStyle"
-              placeholder="Cabin, RV, tent, primitive"
+              // placeholder="Cabin, RV, tent, primitive"
+              // { login === true ? placeholder="yup" : placeholder="nope" }
               maxLength="20" />
           </div>
           <div>

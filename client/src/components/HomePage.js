@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const HomePageStyles = styled.div`
-    background-image: url("images/happyCamperBG1.jpg");
+    background-image: url("/images/happyCamperBG1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
@@ -72,7 +72,7 @@ class HomePage extends Component {
                 <div className="header">
                     <h1>Happy Camper App</h1>
                     <p>App to save you favorite campsites and the details about them</p>
-                    <Link to="/login" className="newUserButton">Create New User</Link>
+                    <Link to="/newUser" className="newUserButton">Create New User</Link>
                     <h3>Click on user name to see their campsites</h3>
                 </div>
                 <UserContainer>

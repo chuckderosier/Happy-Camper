@@ -19,7 +19,7 @@ class App extends Component {
           <Route exact path='/users/:userId/campsites/:campsiteId' component={CampsitePage} />
           <Route exact path='/users/:userId/updateUser' component={UpdateUserForm} />
           <Route exact path='/users/:userId' component={UserPage} />
-          <Route exact path='/login' component={UserForm} />
+          <Route exact path='/newUser' component={UserForm} />
           <Route path='/' component={HomePage} />
         </Switch>
       </Router>

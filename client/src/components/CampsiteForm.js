@@ -86,7 +86,9 @@ class CampsiteForm extends Component {
                             onChange={this.handleChange}
                             value={this.state.newCampsite.campsiteName}
                             type="text" name="campsiteName"
-                            placeholder="Campsite Name" />
+                            placeholder="Required"
+                            maxLength="20"
+                            required />
                     </div>
                     <div>
                         <label htmlFor="campsiteLocation">Campsite location: </label>
@@ -94,7 +96,8 @@ class CampsiteForm extends Component {
                             onChange={this.handleChange}
                             value={this.state.newCampsite.campsiteLocation}
                             type="text" name="campsiteLocation"
-                            placeholder="State, Park Name, Part of State" />
+                            placeholder="State, Park Name, Part of State"
+                            maxLength="20" />
                     </div>
                     <div>
                         <label htmlFor="campsiteType">Camping types: </label>
@@ -102,7 +105,8 @@ class CampsiteForm extends Component {
                             onChange={this.handleChange}
                             value={this.state.newCampsite.campsiteType}
                             type="text" name="campsiteType"
-                            placeholder="ie, Cabin, RV, tent, primitive" />
+                            placeholder="ie, Cabin, RV, tent, primitive" 
+                            maxLength="30" />
                     </div>
                     <div>
                         <label htmlFor="campsiteOpen">Campsite is open: </label>
@@ -110,7 +114,8 @@ class CampsiteForm extends Component {
                             onChange={this.handleChange}
                             value={this.state.newCampsite.campsiteOpen}
                             type="text" name="campsiteOpen"
-                            placeholder="Year Round, Closed, Spring, Summer, Fall" />
+                            placeholder="Year Round, Closed, Spring, Summer, Fall" 
+                            maxLength="40" />
                     </div>
                     <div>
                         <label htmlFor="campsiteDescription">Campsite description: </label>
