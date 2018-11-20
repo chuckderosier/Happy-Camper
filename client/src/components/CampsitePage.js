@@ -69,9 +69,7 @@ class CampsitePage extends Component {
     }
 
     componentDidMount() {
-        const userId = this.props.match.params.userId
-        const campsiteId = this.props.match.params.campsiteId
-        axios.get(`/api/users/${userId}/campsites/${campsiteId}`).then((res) => {
+        axios.get(`/api/users/${this.props.match.params.userId}/campsites/${this.props.match.params.campsiteId}`).then((res) => {
             this.setState({
                 campsites: res.data,
                 user: res.data
@@ -80,10 +78,8 @@ class CampsitePage extends Component {
     }
 
     handleDelete = () => {
-        const campsiteId = this.props.match.params.campsiteId
-        const userId = this.props.match.params.userId
-        axios.delete(`/api/users/${userId}/campsites/${campsiteId}`).then(() => {
-            this.props.history.push(`/users/${userId}`)
+        axios.delete(`/api/users/${this.props.match.params.userId}/campsites/${this.props.match.params.campsiteId}`).then(() => {
+            this.props.history.push(`/users/${this.props.match.params.userId}`)
         })
     }
 

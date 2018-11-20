@@ -92,8 +92,7 @@ class UserPage extends Component {
     }
 
     componentDidMount() {
-        const userId = this.props.match.params.userId
-        axios.get(`/api/users/${userId}`).then((res) => {
+        axios.get(`/api/users/${this.props.match.params.userId}`).then((res) => {
             this.setState({
                 user: res.data,
                 campsites: res.data.campsites
@@ -102,8 +101,7 @@ class UserPage extends Component {
     }
 
     handleDelete = () => {
-        const userId = this.props.match.params.userId
-        axios.delete(`/api/users/${userId}`).then(() => {
+        axios.delete(`/api/users/${this.props.match.params.userId}`).then(() => {
             this.props.history.push('/users')
         })
     }
