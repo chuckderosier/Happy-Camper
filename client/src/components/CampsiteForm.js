@@ -15,15 +15,16 @@ const FormContainer = styled.div`
     form {
         margin: .3em auto;
         padding: 15px;
-        width: 40vw;
-        height: 70vh;
+        width: 50vw;
+        height: 90vh;
         background-color: rgba(255,255,255,.5);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
     div {
-        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
     }
     button {
         margin: 0 auto;
@@ -105,7 +106,7 @@ class CampsiteForm extends Component {
                             onChange={this.handleChange}
                             value={this.state.newCampsite.campsiteType}
                             type="text" name="campsiteType"
-                            placeholder="ie, Cabin, RV, tent, primitive" 
+                            placeholder="ie, Cabin, RV, tent, primitive"
                             maxLength="30" />
                     </div>
                     <div>
@@ -114,16 +115,18 @@ class CampsiteForm extends Component {
                             onChange={this.handleChange}
                             value={this.state.newCampsite.campsiteOpen}
                             type="text" name="campsiteOpen"
-                            placeholder="Year Round, Closed, Spring, Summer, Fall" 
+                            placeholder="Year Round, Closed, Spring, Summer, Fall"
                             maxLength="40" />
                     </div>
                     <div>
                         <label htmlFor="campsiteDescription">Campsite description: </label>
-                        <input
+                        <textarea
                             onChange={this.handleChange}
                             value={this.state.newCampsite.campsiteDescription}
                             type="text" name="campsiteDescription"
-                            placeholder="Your thoughts on the camp" />
+                            placeholder="Your thoughts on the campsite"
+                            rows="4" cols="30"
+                            maxLength="200" />
                     </div>
                     <div>
                         <label htmlFor="campsiteActivities">Campsite activities: </label>

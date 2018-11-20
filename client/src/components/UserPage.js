@@ -17,6 +17,9 @@ const UserPageStyles = styled.div`
         padding: 3px;
         margin: .1em auto;
     }
+    h2 {
+        font-family: 'Cabin Sketch', cursive;
+    }
     .header {
         display: flex;
         flex-direction: column;

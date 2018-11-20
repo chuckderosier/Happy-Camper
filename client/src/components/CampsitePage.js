@@ -116,7 +116,7 @@ class CampsitePage extends Component {
                         <h3>Activities at {this.state.campsites.campsiteName}:</h3>
                         <p>{this.state.campsites.campsiteActivities}</p>
                         <div className="bookButton">
-                            <a href={this.state.campsites.campsiteLinkToBook}>Book now</a>
+                            <a href={this.state.campsites.campsiteLinkToBook}>Book Now</a>
                         </div>
                     </div>
                 </DisplayCampsite>

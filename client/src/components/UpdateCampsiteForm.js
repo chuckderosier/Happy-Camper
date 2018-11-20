@@ -15,15 +15,16 @@ const FormContainer = styled.div`
     form {
         margin: .3em auto;
         padding: 15px;
-        width: 40vw;
-        height: 70vh;
+        width: 50vw;
+        height: 90vh;
         background-color: rgba(255,255,255,.5);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
     div {
-        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
     }
     button {
         margin: 0 auto;
@@ -107,10 +108,12 @@ class UpdateCampsiteForm extends Component {
                     </div>
                     <div>
                         <label htmlFor="campsiteDescription">Campsite description: </label>
-                        <input
+                        <textarea
                             onChange={this.handleChange}
                             value={this.state.campsite.campsiteDescription}
-                            type="text" name="campsiteDescription" />
+                            type="text" name="campsiteDescription"
+                            rows="4" cols="30"
+                            maxLength="200" />
                     </div>
                     <div>
                         <label htmlFor="campsiteActivities">Campsite activities: </label>
@@ -137,7 +140,7 @@ class UpdateCampsiteForm extends Component {
                     <div>
                         <Link
                             to={`/users/${this.props.match.params.userId}/campsites/${this.props.match.params.campsiteId}`}
-                            className="userLinks" >This Campsite Page</Link>
+                            className="userLinks" >Return To Campsite Page</Link>
                     </div>
                 </form>
             </FormContainer>
