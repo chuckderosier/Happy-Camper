@@ -16,6 +16,10 @@ const HomePageStyles = styled.div`
         padding: 3px;
         margin: .1em auto;
     }
+    h1 {
+        font-family: 'Cabin Sketch', cursive;
+        font-weight: lighter;
+    }
     .header {
         display: flex;
         flex-direction: column;

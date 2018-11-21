@@ -19,6 +19,7 @@ const UserPageStyles = styled.div`
     }
     h2 {
         font-family: 'Cabin Sketch', cursive;
+        font-weight: lighter;
     }
     .header {
         display: flex;
