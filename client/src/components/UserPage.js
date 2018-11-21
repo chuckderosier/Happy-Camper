@@ -87,7 +87,8 @@ const CampsiteContainer = styled.div`
         align-items: center;
     }
     img {
-        width: 19vw;
+        max-width: 19vw;
+        max-height: 20vh;
     }
     h4 {
         margin: .2em auto;
