@@ -11,7 +11,7 @@ const HomePageStyles = styled.div`
     height: 100vh;
     margin: 0 auto;
     h1, p, h3 {
-        background-color: rgba(255,255,255,.5);
+        background-color: rgba(255,255,255,.7);
         border-radius: 25em;
         padding: 3px;
         margin: .1em auto;
