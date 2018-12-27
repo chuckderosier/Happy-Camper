@@ -11,7 +11,7 @@ The user can change information about a website or even delete it.
 
 ## Link to Trello: https://trello.com/b/91X1oKxb/happy-camper
 
-## ERD: https://i.imgur.com/A53a4Oy.png
+## ERD: https://i.imgur.com/i8fHV38.png
 
 ## Wireframe: https://i.imgur.com/g3yhDdc.jpg
 
