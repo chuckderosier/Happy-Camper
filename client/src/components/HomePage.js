@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const HomePageStyles = styled.div`
-    background-image: url("https://i.imgur.com/qTWSDwQ.jpg");
+    background-image: url("hhttps://imgur.com/qTWSDwQ");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
