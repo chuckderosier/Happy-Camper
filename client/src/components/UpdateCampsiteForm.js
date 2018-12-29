@@ -14,7 +14,7 @@ const FormContainer = styled.div`
     align-items: center;
     form {
         margin: .3em auto;
-        padding: 18px;
+        padding: 12px;
         width: 50vw;
         height: 90vh;
         background-color: rgba(255,255,255,.5);
