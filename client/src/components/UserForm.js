@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const FormContainer = styled.div`
-    background-image: url("https://imgur.com/qt49emS");
+    background-image: url("hhttps://i.imgur.com/qt49emS.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
