@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 const FormContainer = styled.div`
-    background-image: url("hhttps://i.imgur.com/qt49emS.jpg");
+    background-image: url("https://i.imgur.com/qt49emS.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
@@ -30,7 +30,7 @@ const FormContainer = styled.div`
         font-family: "Times New Roman", Times, serif;
         color: rgb(0,75,0);
         font-size: 1em;
-        background-color: rgb(200,255,200);
+        background-color: rgb(200,250,200);
         border: brown solid 4px;
         border-radius: 25em;     
     }
