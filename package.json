@@ -19,6 +19,7 @@
   "devDependencies": {},
   "description": "",
   "engines": {
-    "node": "9.7.0"
+    "node": "9.7.0",
+    "npm": "6.5.0"
   }
 }
