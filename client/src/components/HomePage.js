@@ -74,7 +74,7 @@ class HomePage extends Component {
         return (
             <HomePageStyles>
                 <div className="header">
-                    <h1>Happy Camper App</h1>
+                    <h1>Happy Camper</h1>
                     <p>Save your favorite campsites and the details about them</p>
                     <Link to="/newUser" className="newUserButton">Create New User</Link>
                     <h3>Click on user name to see their campsites</h3>
