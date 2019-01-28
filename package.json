@@ -20,6 +20,5 @@
   "description": "",
   "engines": {
     "node": "9.7.0",
-    "npm": "5.6.0"
   }
 }
