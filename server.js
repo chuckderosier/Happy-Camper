@@ -13,7 +13,10 @@ app.get('/', (req, res) => {
 
 app.use('/', routes)
 
-const PORT = process.env.PORT || 3001
-app.listen(PORT, () => {
-  console.log(`Server is listening on PORT: ${PORT}`)
+app.listen(process.env.PORT || 3001, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 })
+// const PORT = process.env.PORT || 3001
+// app.listen(PORT, () => {
+//   console.log(`Server is listening on PORT: ${PORT}`)
+// })
