@@ -31,7 +31,7 @@ const HomePageStyles = styled.div`
         text-align: center;
         padding: 5px;
         background-color: rgb(200,255,200);
-        border: rgb(0,75,0) solid 5px;
+        border: rgb(0,75,0) solid 4px;
         border-radius: 25em;
         text-decoration: none;
         display: flex;
