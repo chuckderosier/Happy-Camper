@@ -5,10 +5,10 @@ const routes = require('./routes/index')
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-app.use(express.static(__dirname + 'client/build/'))
+app.use(express.static(__dirname + '/client/build/'))
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + 'client/build/index.html')
+  res.sendFile(__dirname + '/client/build/index.html')
 })
 
 app.use('/', routes)
@@ -18,7 +18,7 @@ app.use('/', routes)
 // })
 
 // const PORT = process.env.PORT || config.httpPort
-const port = process.env.PORT || 8000
+const port = process.env.PORT || 3001
 app.listen(port, () => {
   console.log(`Server is listening on PORT: ${port}`)
 })
