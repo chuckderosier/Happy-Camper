@@ -6,10 +6,10 @@ const routes = require('./routes/index')
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
-app.use(express.static(__dirname + '/build/'))
+app.use(express.static(__dirname + '/client/build/'))
 
 app.get('*', (req, res) => {
-    res.sendFile(__dirname + '/index.html')
+    res.sendFile(__dirname + '/client/build/index.html')
 })
 
 // app.get('*', function (req, res) {
