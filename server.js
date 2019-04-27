@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/client/build/'))
 // })
 
 app.get('*', function (req, res) {
-    const index = path.join(__dirname, 'build', 'index.html');
+    const index = path.join(__dirname + 'build' + 'index.html');
     res.sendFile(index);
   })
 
