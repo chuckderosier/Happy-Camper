@@ -20,7 +20,6 @@ The user can change information about a website or even delete it.
 - React
 - React styled-components
 - React-router-dom 
-- React styled-components 
 - Axios
 ## Back-end:
 - Express
