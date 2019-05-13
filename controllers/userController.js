@@ -14,6 +14,7 @@ const userController = {
             })
     },
     create: (req, res) => {
+        {console.log('fuck')}
         User.create(req.body)
             .then((user) => {
                 res.send(user)

@@ -92,7 +92,7 @@ class LoginForm extends Component {
               value={this.state.newUser.campingStyle}
               type="text" name="campingStyle"
               placeholder="Cabin, RV, tent, primitive"
-              maxLength="20" />
+              maxLength="30" />
           </div>
           <div>
             <label htmlFor="userState">State You Live In: </label>
